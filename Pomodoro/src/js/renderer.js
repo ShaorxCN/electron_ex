@@ -51,7 +51,7 @@ function startWork() {
         },
         onend: () => {
             count--
-            console.log(count)
+            updateTime(0, workTime)
             notification('rest')
         }
     })
@@ -64,6 +64,7 @@ function startrest() {
             updateTime(ms, restTime)
         },
         onend: () => {
+            updateTime(0, restTime)
             notification('work')
         }
     })
