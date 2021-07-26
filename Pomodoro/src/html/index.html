@@ -8,6 +8,35 @@
     #timer-container {
         padding: 30px;
     }
+
+
+    #setting {
+        padding: 50px;
+    }
+
+
+    #count {
+        margin-top: 10px;
+    }
+
+
+    #flag {
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+        outline: none;
+        margin-top: -10px display: inline-block;
+        height: 35px;
+        padding: 0 7px;
+        font-size: 14px;
+        font-family: Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid #F44336;
+        border-radius: 6px;
+        background: #F44336;
+        color: #FFF;
+    }
 </style>
 
 <body>
@@ -18,9 +47,12 @@
             (30min一个周期):<br>
             <input id="count" type="input" />
             <br>
+            <br>
             <button id="start-button">开始</button>
         </div>
         <div id='timing' style="display: none;">
+            <div id="timer-container"></div>
+            <b id="flag">事无不可为</b>
         </div>
     </div>
 </body>

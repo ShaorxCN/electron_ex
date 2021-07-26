@@ -12,6 +12,7 @@ let state = {}
 let startButton
 let settingdiv
 let timeingdiv
+let circlediv
 let workerTimer
 
 
@@ -20,7 +21,8 @@ let workerTimer
 function end() {
     workerTimer = null
     settingdiv.style.display = 'block'
-    timeingdiv.innerHTML = ''
+    timeingdiv.style.display = 'none'
+    circlediv.innerHTML = ''
 }
 
 function updateTime(ms, maxtime) {
@@ -76,6 +78,7 @@ function startrest() {
 window.addEventListener('load', () => {
     settingdiv = window.document.getElementById('setting')
     timeingdiv = window.document.getElementById('timing')
+    circlediv = window.document.getElementById('timer-container')
     startButton = document.getElementById('start-button')
     startButton.onclick = function () {
         count = Number(document.getElementById('count').value)
@@ -86,7 +89,7 @@ window.addEventListener('load', () => {
         settingdiv.style.display = 'none'
         timeingdiv.style.display = 'block'
 
-        progressBar = new ProgressBar.Circle('#timing', {
+        progressBar = new ProgressBar.Circle('#timer-container', {
             strokeWidth: 2,
             color: '#F44336',
             trailColor: '#eee',
