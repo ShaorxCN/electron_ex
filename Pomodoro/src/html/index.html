@@ -1,0 +1,31 @@
+<html>
+<style>
+    * {
+        margin: 0;
+        text-align: center;
+    }
+
+    #timer-container {
+        padding: 30px;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <!-- <div id="timer-container"></div> -->
+        <div id='setting'>
+            番茄钟周期数<br>
+            (30min一个周期):<br>
+            <input id="count" type="input" />
+            <br>
+            <button id="start-button">开始</button>
+        </div>
+        <div id='timing' style="display: none;">
+        </div>
+    </div>
+</body>
+<script>
+    require('../js/renderer.js')
+</script>
+
+</html>
