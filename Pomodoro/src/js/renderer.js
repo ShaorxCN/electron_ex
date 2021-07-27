@@ -27,7 +27,7 @@ function end() {
 function updateTime(ms, maxtime) {
     let s = (ms / 1000).toFixed(0)
     let ss = s % 60
-    let mm = (s / 60).toFixed(0)
+    let mm = Math.floor((s / 60))
     progressBar.set(1 - s / maxtime)
     progressBar.setText(`${mm.toString().padStart(2, '0')}:${ss.toString().padStart(2, '0')}`)
 }
@@ -46,6 +46,7 @@ async function notification(job) {
 
 
 function startWork() {
+    updateTime(workTime * 1000, workTime)
     workTimer = new Timer({
         ontick: (ms) => {
             updateTime(ms, workTime)
@@ -60,6 +61,7 @@ function startWork() {
 }
 
 function startrest() {
+    updateTime(restTime * 1000, restTime)
     workTimer = new Timer({
         ontick: (ms) => {
             updateTime(ms, restTime)
@@ -85,8 +87,6 @@ window.addEventListener('load', () => {
             ipcRenderer.send('warning', { type: 0 })
         }
 
-        settingdiv.style.display = 'none'
-        timeingdiv.style.display = 'block'
 
         progressBar = new ProgressBar.Circle('#timer-container', {
             strokeWidth: 2,
@@ -95,8 +95,11 @@ window.addEventListener('load', () => {
             trailWidth: 1,
             svgStyle: null
         })
-
         startWork()
+        settingdiv.style.display = 'none'
+        timeingdiv.style.display = 'block'
+
+
     }
 })
 
