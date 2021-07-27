@@ -1,6 +1,5 @@
 const Timer = require('timer.js')
 const { ipcRenderer } = require('electron')
-const { remote } = require('electron')
 const ProgressBar = require('progressbar.js/dist/progressbar.js')
 
 

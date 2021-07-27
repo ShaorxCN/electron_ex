@@ -5,10 +5,11 @@ let win
 app.whenReady().then(() => {
     handleIPC()
     win = new BrowserWindow({
-        icon: 'src/icon/icon.jfif',
+        icon: path.join(__dirname, 'src/icon/icon.ico'),
         width: 250,
         height: 350,
         autoHideMenuBar: true,
+        resizable: false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
