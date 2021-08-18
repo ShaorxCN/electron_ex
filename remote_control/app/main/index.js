@@ -1,4 +1,6 @@
 const { app, BrowserWindow } = require('electron')
+const isDev = require('electron-is-dev')
+const path = require('path')
 let win
 
 app.on('ready', () => {
@@ -10,5 +12,11 @@ app.on('ready', () => {
         }
     })
 
-    win.loadURL('http://localhost:3000')
+    if (isDev) {
+        win.loadURL('http://localhost:3000')
+    } else {
+        win.loadURL(path.resolve(__dirname, '../renderer/pages/main/index.html'))
+    }
+
+
 })

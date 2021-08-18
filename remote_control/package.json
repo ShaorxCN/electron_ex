@@ -12,5 +12,9 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^13.1.6"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^2.0.0"
   }
 }
